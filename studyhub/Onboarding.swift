@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import CoreData
 
-struct OnboardingView: View {
+struct Onboarding: View {
     @State private var firstName: String = ""
     @State private var lastName: String = ""
     @State private var username: String = ""
@@ -103,13 +103,5 @@ struct User{
 }
 
 #Preview {
-    OnboardingView()
+    Onboarding()
 }
-//
-//  Onboarding.swift
-//  studyhub
-//
-//  Created by Dias Akyshev on 13.11.2024.
-//
-
-import Foundation

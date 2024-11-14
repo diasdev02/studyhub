@@ -42,27 +42,12 @@ struct Onboarding: View {
                         .background(Color.white.opacity(0.7))
                         .border(.red, width: CGFloat(wrongPassword))
                         .cornerRadius(CGFloat(15))
-                    TextField("First Name", text: $firstName)
-                        .padding()
-                        .frame(width: 360, height: 50)
-                        .background(Color.white.opacity(0.7))
-                        .border(.gray)
-                        .cornerRadius(CGFloat(15))
-                    TextField("Last Name", text: $lastName)
-                        .padding()
-                        .frame(width: 360, height: 50)
-                        .background(Color.white.opacity(0.7))
-                        .border(.gray)
-                        .cornerRadius(CGFloat(15))
-                    Toggle(isStudent ? "Student" : "Teacher", isOn: $isStudent)
-                        .padding()
-                        .colorScheme(ColorScheme.dark)
                     Button{
                         registerUser(username: username, firstName: firstName, lastName: lastName, isStudent: isStudent)
                     } label: {
                         HStack{
                             Text(
-                                "SIGN IN"
+                                "SIGN UP"
                             )
                         }
                     }
@@ -70,10 +55,7 @@ struct Onboarding: View {
                     NavigationLink{
                         UserView()
                     } label: {
-                        HStack{
-                            Text("Already registered?")
-                            
-                        }
+                        
                     }
                 }.offset(y: -100)
             }

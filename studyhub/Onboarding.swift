@@ -48,16 +48,14 @@ struct Onboarding: View {
                         HStack{
                             Text(
                                 "SIGN UP"
-                            )
+                            ).frame(width: 360, height: 50)
+                            .background(Color.orange)
+                            .foregroundColor(.white)
+                            .clipShape(.rect(cornerRadius: 15))
                         }
                     }
                         .padding()
-                    NavigationLink{
-                        UserView()
-                    } label: {
-                        
-                    }
-                }.offset(y: -100)
+                    }.offset(y: -100)
             }
         }
     }

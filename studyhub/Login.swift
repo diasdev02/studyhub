@@ -14,7 +14,7 @@ struct Login: View {
     @State private var wrongUsername = 0
     @State private var wrongPassword = 0
     var body: some View{
-        NavigationStack{
+        NavigationView{
             ZStack{
                 Color.blue.ignoresSafeArea()
                 Circle().scale(1.7).foregroundStyle(.orange)
@@ -30,15 +30,34 @@ struct Login: View {
                         .background(Color.white.opacity(0.7))
                         .border(.red, width: CGFloat(wrongUsername))
                         .cornerRadius(CGFloat(15))
+                        .disableAutocorrection(true)
                     SecureField("Password", text: $password)
                         .padding()
                         .frame(width: 360, height: 50)
                         .background(Color.white.opacity(0.7))
                         .border(.red, width: CGFloat(wrongPassword))
                         .cornerRadius(CGFloat(15))
-                    Text(
-                            "SIGN IN"
-                        ).padding()
+                    Button{
+                            if username.isEmpty || password.isEmpty{
+                            wrongUsername = 1
+                            wrongPassword = 1
+                        }   else{
+                            wrongUsername = 0
+                            wrongPassword = 0
+                            if username == "admin" && password == "admin"{
+                                UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                            }
+                        }
+                    } label: {
+                        HStack{
+                            Text(
+                                "SIGN UP"
+                            ).frame(width: 360, height: 50)
+                            .background(Color.orange)
+                            .foregroundColor(.white)
+                            .clipShape(.rect(cornerRadius: 15))
+                        }
+                    }
                 }
             }
         }

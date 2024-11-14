@@ -15,13 +15,10 @@ struct Header: View {
             VStack {
                 ZStack {
                     Image("Logo")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 100, height: 50)
                     HStack {
                         Spacer()
                         if isLoggedIn {
-                            NavigationLink(destination: UserView()) {
+                            NavigationLink(destination: UserProfile()) {
                                 Image("profile")
                                     .resizable()
                                     .aspectRatio( contentMode: .fit)
@@ -44,9 +41,10 @@ struct Header: View {
             }
         }
     }
-
 }
-
-#Preview {
-    Header()
+ 
+struct Header_Previews: PreviewProvider {
+    static var previews: some View {
+        Header()
+    }
 }

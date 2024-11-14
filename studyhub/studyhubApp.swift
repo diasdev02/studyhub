@@ -14,8 +14,7 @@ struct studyhubApp: App {
     var body: some Scene {
         WindowGroup {
             Header()
-            Login().environment(\.managedObjectContext, persistenceController.container.viewContext)
-            
+            Onboarding().environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

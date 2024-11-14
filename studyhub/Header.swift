@@ -15,6 +15,9 @@ struct Header: View {
             VStack {
                 ZStack {
                     Image("Logo")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 50)
                     HStack {
                         Spacer()
                         if isLoggedIn {

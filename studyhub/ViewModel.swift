@@ -23,7 +23,7 @@ class ViewModel: ObservableObject {
     @Published var lastName = UserDefaults.standard.string(forKey: kLastName) ?? ""
     @Published var email = UserDefaults.standard.string(forKey: kEmail) ?? ""
     @Published var phoneNumber = UserDefaults.standard.string(forKey: kPhoneNumber) ?? ""
-    @Published var isSTudent = true
+    @Published var isStudent = true
 
     
     @Published var errorMessageShow = false

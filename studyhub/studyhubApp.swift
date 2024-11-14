@@ -13,8 +13,9 @@ struct studyhubApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            Header()
+            Login().environment(\.managedObjectContext, persistenceController.container.viewContext)
+            
         }
     }
 }

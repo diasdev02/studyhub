@@ -13,28 +13,35 @@ struct DetailItem: View {
     let challenge: Item
     
     var body: some View {
-        ScrollView {
+            HStack {
+                Text(challenge.title ?? "")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.sectionCategories())
+                    .foregroundColor(.black)
+                Spacer(minLength: 10)
+                Text(challenge.descriptionTask ?? "")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.paragraphText())
+                    .foregroundColor(.primaryColor1)
+                    .lineLimit(2)
+                Spacer(minLength: 5)
+                Text("Rating" + (challenge.rating ?? ""))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.highlightText())
+                    .foregroundColor(.primaryColor1)
+                    .monospaced()
+            }
             AsyncImage(url: URL(string: challenge.image ?? "")) { image in
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
             } placeholder: {
                 ProgressView()
             }
+            .frame(maxWidth: 90, maxHeight: 90)
             .clipShape(Rectangle())
-            .frame(minHeight: 150)
-            Text(challenge.title ?? "")
-                .font(.subTitleFont())
-                .foregroundColor(.primaryColor1)
-            Spacer(minLength: 20)
-            Text(challenge.descriptionTask ?? "")
-                .font(.regularText())
-            Spacer(minLength: 10)
-            Spacer()
-        }
-        .frame(maxWidth: .infinity)
-        .ignoresSafeArea()
     }
+
 }
 
 struct DetailItem_Previews: PreviewProvider {

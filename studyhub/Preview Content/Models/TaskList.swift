@@ -2,7 +2,7 @@ import CoreData
 import Foundation
 
 struct TaskList: Codable {
-    let menu: [TaskItem]
+    let menu: [TaskItem] = []
     
     enum CodingKeys: String, CodingKey {
         case menu = "menu"
@@ -60,6 +60,18 @@ struct TaskList: Codable {
         let request = URLRequest(url: url!)
         let session = URLSession.shared
         let decoder = JSONDecoder()
+        let challenge = URLSession.shared.dataTask(with: request) {
+            data, response, error in
+            if let error {
+                print("Error: \(error)")
+                return
+            }
+            if let data = data{
+                print("No data")
+                let menu = try! decoder.decode([Challenge].self, from: data)
+            }
+        }
+        
         
     }
 }

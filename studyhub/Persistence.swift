@@ -55,11 +55,17 @@ struct PersistenceController {
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
     
+    func clear() {
+        // Delete all dishes from the store
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Dish")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        let _ = try? container.persistentStoreCoordinator.execute(deleteRequest, with: container.viewContext)
+    }
     
     static func oneTask() -> Item {
         let task = Item(context: shared.container.viewContext)
         task.title = "Задача 1"
-        task.image = "oneTask"
+        task.image = "https://github.com/diasgreekSalad.jpg?raw=true"
         return task
     }
 

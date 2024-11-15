@@ -1,9 +1,3 @@
-//
-//  UserProfile.swift
-//  littlelemon
-//
-//  Created by Emre Ülkem on 15.04.2023.
-//
 
 import SwiftUI
 
@@ -22,7 +16,6 @@ struct UserView: View {
     var body: some View {
         NavigationView{
             ScrollView(.vertical, showsIndicators: false) {
-                
                 VStack(spacing: 5) {
                     VStack {
                         Text("Avatar")
@@ -72,11 +65,6 @@ struct UserView: View {
                 .textFieldStyle(.roundedBorder)
                 .disableAutocorrection(true)
                 .padding()
-                
-                Text("Email notifications")
-                    .font(.regularText())
-                    .foregroundColor(.primaryColor1)
-                .padding()
                 .font(Font.leadText())
                 .foregroundColor(.primaryColor1)
                 
@@ -96,7 +84,6 @@ struct UserView: View {
                         lastName = viewModel.lastName
                         email = viewModel.email
                         phoneNumber = viewModel.phoneNumber
-                        
                         self.presentation.wrappedValue.dismiss()
                     }
                     .buttonStyle(ButtonStylePrimaryColorReverse())

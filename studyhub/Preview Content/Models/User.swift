@@ -23,5 +23,5 @@ struct User: Codable, Identifiable {
         case image = "image"
         case username = "username"
         case email = "email"
-    }U
+    }
 }

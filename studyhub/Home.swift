@@ -15,7 +15,7 @@ struct Home: View{
         NavigationStack {
             VStack {
                 Header()
-                MainPage()
+                Onboarding().environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
             }
         }
     }

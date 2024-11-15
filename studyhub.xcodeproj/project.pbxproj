@@ -29,30 +29,9 @@
 		0B0FD7A02CE4C9F300F1A5CB /* studyhubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = studyhubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		0B547A672CE71D2900258B30 /* Exceptions for "studyhub" folder in "studyhub" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Preview Content/Models/TaskList.swift",
-			);
-			target = 0B0FD7802CE4C9F000F1A5CB /* studyhub */;
-		};
-		0B547A682CE71D2900258B30 /* Exceptions for "studyhub" folder in "studyhubUITests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Preview Content/Models/TaskList.swift",
-			);
-			target = 0B0FD79F2CE4C9F300F1A5CB /* studyhubUITests */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		0B0FD7832CE4C9F000F1A5CB /* studyhub */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				0B547A672CE71D2900258B30 /* Exceptions for "studyhub" folder in "studyhub" target */,
-				0B547A682CE71D2900258B30 /* Exceptions for "studyhub" folder in "studyhubUITests" target */,
-			);
 			path = studyhub;
 			sourceTree = "<group>";
 		};

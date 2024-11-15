@@ -9,7 +9,14 @@ import Foundation
 import SwiftUI
 
 struct Home: View{
-    var body: some View{
-        Text("Hello, World!")
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    var body: some View {
+        NavigationStack {
+            VStack {
+                Header()
+                MainPage()
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@ struct studyhubApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Header()
+            Header().environment(\.managedObjectContext, persistenceController.container.viewContext)
             Onboarding().environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

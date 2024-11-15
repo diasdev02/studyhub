@@ -54,4 +54,13 @@ struct PersistenceController {
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
+    
+    
+    static func oneTask() -> Item {
+        let task = Item(context: shared.container.viewContext)
+        task.title = "Задача 1"
+        task.image = "oneTask"
+        return task
+    }
+
 }

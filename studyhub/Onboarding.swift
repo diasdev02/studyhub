@@ -85,20 +85,6 @@ struct Onboarding: View {
         }
     }
 }
-struct User{
-    var id = UUID()
-    let title : String
-    let descriptionTask: String
-    let image: String
-    let category: String
-    
-    enum CodingKeys: String, CodingKey {
-        case title = "title"
-        case descriptionDish = "description"
-        case image = "image"
-        case category = "category"
-    }
-}
 
 #Preview {
     Onboarding()

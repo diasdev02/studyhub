@@ -14,17 +14,19 @@ struct Header: View {
         NavigationStack {
             VStack {
                 ZStack {
-                    Image("Logo")
-                    HStack {
+                        HStack {
                         Spacer()
                         if isLoggedIn {
-                            NavigationLink(destination: UserProfile()) {
-                                Image("profile")
+                            Image("Logo")
+                                .scaledToFit()
+                                .frame(height: 100)
+                            NavigationLink(destination: UserView()) {
+                                Image("Profile")
                                     .resizable()
-                                    .aspectRatio( contentMode: .fit)
-                                    .frame(maxHeight: 50)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 40, height: 40, alignment: .trailing)
                                     .clipShape(Circle())
-                                    .padding(.trailing)
+                                    .padding()
                             }
                         }
                     }
